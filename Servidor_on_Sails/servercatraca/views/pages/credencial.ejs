@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Credencial</title>
+        <script type="text/javascript">
+            function validaFormulario(){
+                if(document.forms["cadastroCredencial"]["id_cred"].value==""){
+                    alert("Id credencial não pode ser vazio.");
+                    return false
+                }
+                if(document.forms["cadastroCredencial"]["id_owner"].value==""){
+                    alert("Id Owner não pode ser vazio.");
+                    return false
+                }
+                if(document.forms["cadastroCredencial"]["papel"].value==""){
+                    alert("Selecione um papel.");
+                    return false
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Cadastro de Credencial</h1>
+        <form method="GET" action="Credencial/registrar" name="cadastroCredencial" onsubmit="return validaFormulario()">
+        	<table>
+        		<tr><td>Id credencial:</td><td><input type="text" name="id_cred"></td></tr>
+        		<tr><td>Id Owner:</td><td><input type="text" name="id_owner"></td></tr>
+        		<tr>
+        		<tr>
+        			<td>Papel>:</td>
+        			<td>
+						<select name="papel">
+							<option value="">Nenhum item selecionado</option>
+							<option value="Acompanhante">Acompanhante</option>
+							<option value="Aluno">Aluno</option>
+							<option value="Visitante">Visitante</option>
+							<option value="test">test</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Data de Validade:</td>
+					<td><input type="date" name="valid_day"></td>
+				</tr>
+				<tr><td><input type="submit" value="Cadastrar"></td><td><input type="reset" value="Limpar" name="RstLimpar"></td></tr>
+        	</table>
+        
+    </body>
+</html>

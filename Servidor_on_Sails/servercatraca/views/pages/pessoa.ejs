@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Pessoa</title>
+        <script type="text/javascript">
+            function validaFormulario(){
+                if(document.forms["cadastroPessoa"]["nome"].value==""){
+                    alert("Nome não pode ser vazio.");
+                    return false
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Cadastro de Pessoa</h1>
+        <form name="cadastroPessoa" method="GET" action="Pessoa/registrar" onsubmit="return validaFormulario()">
+            <table>
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" name="nome"></td></tr>
+                <tr>
+                    <td>RG:</td>
+                    <td><input type="text" name="rg"></td></tr>
+                <tr>
+                    <td>CPF:</td>
+                    <td><input type="text" name="cfp"></td></tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="text" name="email"></td></tr>
+                <tr>
+                    <td>Sexo:</td>
+                    <td ><input type="radio" name="txtSexo" value="m">Masculino<input type="radio" name="txtSexo" value="f">Feminino</td>
+                </tr>
+                <tr><td><input type="submit" value="Cadastrar"></td><td><input type="reset" value="Limpar" name="RstLimpar"></td></tr>
+            </table>
+        </form>
+    </body>
+</html>

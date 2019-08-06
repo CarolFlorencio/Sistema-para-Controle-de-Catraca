@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Acompanhante</title>
+        <script type="text/javascript">
+            function validaFormulario(){
+                if(document.forms["cadastroAcompanhante"]["pessoa_id"].value==""){
+                    alert("Id passoa não pode ser vazio.");
+                    return false
+                }
+                if(document.forms["cadastroAcompanhante"]["aluno_mat"].value==""){
+                    alert("Matricula aluno não pode ser vazio.");
+                    return false
+                }
+            }
+        </script>
+    </head>
+    <body>
+    	<h1>Cadastro de Acompanhante</h1>
+        <form method="GET" name="cadastroAcompanhante" action="Acompanhante/registrar" onsubmit="return validaFormulario()">
+        	<table>
+                <tr><td>Id Pessoa:</td><td><input type="text" name="pessoa_id"></td></tr>
+                <tr><td>Matricula Aluno:</td><td><input type="text" name="aluno_mat"></td></tr>
+                <tr><td><input type="submit" value="Cadastrar"></td><td><input type="reset" value="Limpar" name="RstLimpar"></td></tr>
+        	</table>
+        </form>
+    </body>
+</html>
